@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/autonomous_navigator/autonomous_navigator.egg-info/PKG-INFO
+../../build/autonomous_navigator/autonomous_navigator.egg-info/SOURCES.txt
+../../build/autonomous_navigator/autonomous_navigator.egg-info/dependency_links.txt
+../../build/autonomous_navigator/autonomous_navigator.egg-info/entry_points.txt
+../../build/autonomous_navigator/autonomous_navigator.egg-info/requires.txt
+../../build/autonomous_navigator/autonomous_navigator.egg-info/top_level.txt
+../../build/autonomous_navigator/autonomous_navigator.egg-info/zip-safe
+autonomous_navigator/__init__.py
+autonomous_navigator/navigator.py
+resource/autonomous_navigator
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

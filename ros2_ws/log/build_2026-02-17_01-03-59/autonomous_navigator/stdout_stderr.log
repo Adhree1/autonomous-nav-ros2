@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/autonomous_navigator/autonomous_navigator.egg-info
+writing ../../build/autonomous_navigator/autonomous_navigator.egg-info/PKG-INFO
+writing dependency_links to ../../build/autonomous_navigator/autonomous_navigator.egg-info/dependency_links.txt
+writing entry points to ../../build/autonomous_navigator/autonomous_navigator.egg-info/entry_points.txt
+writing requirements to ../../build/autonomous_navigator/autonomous_navigator.egg-info/requires.txt
+writing top-level names to ../../build/autonomous_navigator/autonomous_navigator.egg-info/top_level.txt
+writing manifest file '../../build/autonomous_navigator/autonomous_navigator.egg-info/SOURCES.txt'
+reading manifest file '../../build/autonomous_navigator/autonomous_navigator.egg-info/SOURCES.txt'
+writing manifest file '../../build/autonomous_navigator/autonomous_navigator.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build
+creating /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build/lib
+creating /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build/lib/autonomous_navigator
+copying autonomous_navigator/navigator.py -> /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build/lib/autonomous_navigator
+copying autonomous_navigator/__init__.py -> /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build/lib/autonomous_navigator
+running install
+running install_lib
+creating /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator
+copying /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build/lib/autonomous_navigator/navigator.py -> /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator
+copying /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build/lib/autonomous_navigator/__init__.py -> /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator
+byte-compiling /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator/navigator.py to navigator.cpython-312.pyc
+byte-compiling /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/share/ament_index
+creating /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/share/ament_index/resource_index
+creating /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/share/ament_index/resource_index/packages
+copying resource/autonomous_navigator -> /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/share/ament_index/resource_index/packages
+copying package.xml -> /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/share/autonomous_navigator
+running install_egg_info
+Copying ../../build/autonomous_navigator/autonomous_navigator.egg-info to /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator-0.0.0-py3.12.egg-info
+running install_scripts
+Installing navigator script to /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/autonomous_navigator
+writing list of installed files to '/home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/install.log'

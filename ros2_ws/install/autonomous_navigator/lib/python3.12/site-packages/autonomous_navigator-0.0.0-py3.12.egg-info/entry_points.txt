@@ -1,0 +1,2 @@
+[console_scripts]
+navigator = autonomous_navigator.navigator:main
