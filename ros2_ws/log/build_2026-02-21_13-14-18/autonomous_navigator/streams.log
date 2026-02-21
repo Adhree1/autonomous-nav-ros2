@@ -1,0 +1,24 @@
+[0.639s] Invoking command in '/home/prohype/autonomous-nav-ros2/ros2_ws/src/autonomous_navigator': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/autonomous_navigator build --build-base /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build install --record /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/install.log --single-version-externally-managed install_data
+[0.789s] running egg_info
+[0.800s] writing ../../build/autonomous_navigator/autonomous_navigator.egg-info/PKG-INFO
+[0.800s] writing dependency_links to ../../build/autonomous_navigator/autonomous_navigator.egg-info/dependency_links.txt
+[0.800s] writing entry points to ../../build/autonomous_navigator/autonomous_navigator.egg-info/entry_points.txt
+[0.800s] writing requirements to ../../build/autonomous_navigator/autonomous_navigator.egg-info/requires.txt
+[0.800s] writing top-level names to ../../build/autonomous_navigator/autonomous_navigator.egg-info/top_level.txt
+[0.822s] reading manifest file '../../build/autonomous_navigator/autonomous_navigator.egg-info/SOURCES.txt'
+[0.822s] writing manifest file '../../build/autonomous_navigator/autonomous_navigator.egg-info/SOURCES.txt'
+[0.822s] running build
+[0.822s] running build_py
+[0.823s] copying autonomous_navigator/navigator.py -> /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build/lib/autonomous_navigator
+[0.823s] running install
+[0.827s] running install_lib
+[0.838s] copying /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build/lib/autonomous_navigator/navigator.py -> /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator
+[0.838s] byte-compiling /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator/navigator.py to navigator.cpython-312.pyc
+[0.838s] running install_data
+[0.839s] running install_egg_info
+[0.850s] removing '/home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator-0.0.0-py3.12.egg-info' (and everything under it)
+[0.850s] Copying ../../build/autonomous_navigator/autonomous_navigator.egg-info to /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages/autonomous_navigator-0.0.0-py3.12.egg-info
+[0.851s] running install_scripts
+[0.923s] Installing navigator script to /home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/autonomous_navigator
+[0.923s] writing list of installed files to '/home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/install.log'
+[0.936s] Invoked command in '/home/prohype/autonomous-nav-ros2/ros2_ws/src/autonomous_navigator' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/prohype/autonomous-nav-ros2/ros2_ws/install/autonomous_navigator/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/autonomous_navigator build --build-base /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/build install --record /home/prohype/autonomous-nav-ros2/ros2_ws/build/autonomous_navigator/install.log --single-version-externally-managed install_data

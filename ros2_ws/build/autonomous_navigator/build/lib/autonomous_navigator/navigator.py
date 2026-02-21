@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import TwistStamped
 from sensor_msgs.msg import LaserScan
 import math
 
@@ -10,7 +10,7 @@ class AutonomousNavigator(Node):
         super().__init__('autonomous_navigator')
         
         # Publisher to control robot movement
-        self.velocity_publisher = self.create_publisher(Twist, 'cmd_vel', 10)
+        self.velocity_publisher = self.create_publisher(TwistStamped, 'cmd_vel', 10)
         
         # Subscriber to get laser scan data (for obstacle detection)
         self.scan_subscriber = self.create_subscription(
@@ -43,18 +43,20 @@ class AutonomousNavigator(Node):
     
     def navigate(self):
         """Main navigation logic"""
-        vel_msg = Twist()
+        vel_msg = TwistStamped()
+        vel_msg.header.stamp = self.get_clock().now().to_msg()
+        vel_msg.header.frame_id = 'base_link'
         
         if self.obstacle_detected:
             # Obstacle ahead - turn right
             self.get_logger().info(f'Obstacle detected at {self.min_distance:.2f}m - Turning')
-            vel_msg.linear.x = 0.0
-            vel_msg.angular.z = -0.5  # Turn right
+            vel_msg.twist.linear.x = 0.0
+            vel_msg.twist.angular.z = -0.5  # Turn right
         else:
             # No obstacle - move forward
             self.get_logger().info(f'Clear ahead ({self.min_distance:.2f}m) - Moving forward')
-            vel_msg.linear.x = 0.2  # Move forward at 0.2 m/s
-            vel_msg.angular.z = 0.0
+            vel_msg.twist.linear.x = 0.2  # Move forward at 0.2 m/s
+            vel_msg.twist.angular.z = 0.0
         
         self.velocity_publisher.publish(vel_msg)
 
