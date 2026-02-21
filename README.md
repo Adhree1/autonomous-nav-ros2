@@ -3,10 +3,14 @@
 A ROS2 project implementing autonomous navigation with waypoint following and obstacle avoidance using TurtleBot3 simulation.
 
 ## Demo Videos
-**Basic Obstacle Avoidance:**
-[![Demo Video](https://img.youtube.com/vi/NocbXcP8jg0/0.jpg)](https://www.youtube.com/watch?v=NocbXcP8jg0)
 
-*Waypoint navigation demo coming soon!*
+**Waypoint Navigation with RViz Visualization:**
+[![Waypoint Navigation Demo](https://img.youtube.com/vi/V0O-TULP-uc/0.jpg)](https://www.youtube.com/watch?v=V0O-TULP-uc)
+
+**Basic Obstacle Avoidance (Initial Version):**
+[![Basic Demo](https://img.youtube.com/vi/NocbXcP8jg0/0.jpg)](https://www.youtube.com/watch?v=NocbXcP8jg0)
+
+*Watch the robot navigate through multiple waypoints while avoiding obstacles in real-time!*
 
 ## Features
 - ✅ **Waypoint Navigation** - Robot follows predefined coordinates (x, y positions)

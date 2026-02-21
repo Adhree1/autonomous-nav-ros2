@@ -4,6 +4,7 @@ from rclpy.node import Node
 from geometry_msgs.msg import TwistStamped
 from sensor_msgs.msg import LaserScan
 from nav_msgs.msg import Odometry
+from visualization_msgs.msg import Marker, MarkerArray
 import math
 
 class AutonomousNavigator(Node):
@@ -12,6 +13,9 @@ class AutonomousNavigator(Node):
         
         # Publisher to control robot movement
         self.velocity_publisher = self.create_publisher(TwistStamped, 'cmd_vel', 10)
+        
+        # Publisher for waypoint markers
+        self.marker_publisher = self.create_publisher(MarkerArray, 'waypoint_markers', 10)
         
         # Subscriber to get laser scan data (for obstacle detection)
         self.scan_subscriber = self.create_subscription(
@@ -43,6 +47,54 @@ class AutonomousNavigator(Node):
         
         self.get_logger().info('Autonomous Navigator with Waypoints Started!')
         self.get_logger().info(f'Total waypoints: {len(self.waypoints)}')
+    
+    def publish_waypoint_markers(self):
+        """Publish visualization markers for waypoints"""
+        marker_array = MarkerArray()
+        
+        for i, (x, y) in enumerate(self.waypoints):
+            marker = Marker()
+            marker.header.frame_id = "odom"
+            marker.header.stamp = self.get_clock().now().to_msg()
+            marker.ns = "waypoints"
+            marker.id = i
+            marker.type = Marker.SPHERE
+            marker.action = Marker.ADD
+            
+            # Position
+            marker.pose.position.x = x
+            marker.pose.position.y = y
+            marker.pose.position.z = 0.2  # Hover above ground
+            marker.pose.orientation.w = 1.0
+            
+            # Size
+            marker.scale.x = 0.3
+            marker.scale.y = 0.3
+            marker.scale.z = 0.3
+            
+            # Color - green for unvisited, yellow for current, red for completed
+            if i < self.current_waypoint_index:
+                # Completed waypoints - RED
+                marker.color.r = 1.0
+                marker.color.g = 0.0
+                marker.color.b = 0.0
+                marker.color.a = 0.5  # Semi-transparent
+            elif i == self.current_waypoint_index:
+                # Current waypoint - YELLOW
+                marker.color.r = 1.0
+                marker.color.g = 1.0
+                marker.color.b = 0.0
+                marker.color.a = 1.0
+            else:
+                # Future waypoints - GREEN
+                marker.color.r = 0.0
+                marker.color.g = 1.0
+                marker.color.b = 0.0
+                marker.color.a = 0.8
+            
+            marker_array.markers.append(marker)
+        
+        self.marker_publisher.publish(marker_array)
     
     def odom_callback(self, msg):
         """Update robot's current position from odometry"""
@@ -101,6 +153,9 @@ class AutonomousNavigator(Node):
         vel_msg.header.stamp = self.get_clock().now().to_msg()
         vel_msg.header.frame_id = 'base_link'
         
+        # Publish waypoint markers for visualization
+        self.publish_waypoint_markers()
+        
         # Check if all waypoints completed
         if self.current_waypoint_index >= len(self.waypoints):
             self.get_logger().info('All waypoints reached! Mission complete!', throttle_duration_sec=2.0)
@@ -123,8 +178,8 @@ class AutonomousNavigator(Node):
         # PRIORITY 1: Avoid obstacles (safety first!)
         if self.obstacle_detected:
             self.get_logger().info(f'Obstacle at {self.min_distance:.2f}m - Avoiding', throttle_duration_sec=1.0)
-            vel_msg.twist.linear.x = 0.0
-            vel_msg.twist.angular.z = -0.5  # Turn right to avoid
+            vel_msg.twist.linear.x = -0.1  # Back up slightly
+            vel_msg.twist.angular.z = -0.8  # Turn right faster
         
         # PRIORITY 2: Turn toward goal if facing wrong direction
         elif abs(angle_to_goal) > 0.2:  # If more than ~11 degrees off
